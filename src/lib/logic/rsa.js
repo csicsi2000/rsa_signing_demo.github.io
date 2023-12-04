@@ -48,9 +48,3 @@ export function validateMessage(signature, publicKeyPem, originalMessage) {
 
   return verified
 }
-
-
-let message = "test"
-let pair = generateRSAKeyPair(512)
-let res = encodeMessage("test",pair.privateKey)
-let fin = validateMessage(res,pair.publicKey,message)
