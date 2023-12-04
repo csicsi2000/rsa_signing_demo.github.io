@@ -1,19 +1,35 @@
 <script>
   import ReceiveMessage from "$lib/components/ReceiveMessage.svelte";
+  import { validateMessage } from "$lib/logic/rsa";
+  import { ValidationStatus } from "$lib/object/document-status";
 /**
  * @typedef {import('$lib/object/signed-document').SignedDocument} SignedDocument
  */
   /**
    * @type {Array<SignedDocument>}
    */
-  export let validationItems = [];
+  export let validationItems = []
 
-  let isItemSelected = false;
+  let isItemSelected = false
+  let validityStatus = ""
   $: {
     if(validationItems.length == 0){
-      isItemSelected = true;
+      isItemSelected = true
     }else{
-      isItemSelected = false;
+      isItemSelected = false
+      validityStatus = ""
+    }
+  }
+
+  function validateFile(){
+    let activeItem = validationItems[0]
+    let res = validateMessage(activeItem.signature,activeItem.publicKey,activeItem.text)
+    if(res){
+      validityStatus = "VALID"
+      validationItems[0].status = ValidationStatus.VALID
+    }else{
+      validityStatus = "INVALID"
+      validationItems[0].status = ValidationStatus.INVALID
     }
   }
 </script>
@@ -26,7 +42,7 @@
   </div>
   <div class="card-footer">
     <div class="d-grid">
-      <button class="btn btn-success" on:click={() => console.log("Clicked")} disabled={isItemSelected}>
+      <button class="btn btn-success" on:click={() => validateFile()} disabled={isItemSelected}>
         Validate message
       </button>
     </div>

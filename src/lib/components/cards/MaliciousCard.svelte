@@ -11,14 +11,22 @@
   let publicKey = ""
   let message = ""
 
+  let enterSwitch = true
   $: {
-    if (maliciousItem.length != 0) {
-      publicKey = maliciousItem[0].publicKey;
-      message = maliciousItem[0].text;
-    }else{
+    if (maliciousItem.length != 0 && enterSwitch) {
+      publicKey = maliciousItem[0].publicKey
+      message = maliciousItem[0].text
+      enterSwitch = false
+    }else if(maliciousItem.length == 0){
       publicKey = ""
       message = ""
+      enterSwitch = true
     }
+  }
+
+  function modify(){
+    maliciousItem[0].publicKey = publicKey
+    maliciousItem[0].text = message
   }
 </script>
 
@@ -41,7 +49,7 @@
       <input type="text" class="form-control" id="publicKey" bind:value={message}/>
     </div>
     <div class="d-grid">
-      <button class="btn btn-danger" on:click={() => console.log("Clicked")}>
+      <button class="btn btn-danger" on:click={() => modify()}>
         Modify file
       </button>
     </div>
