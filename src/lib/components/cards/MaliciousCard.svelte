@@ -34,7 +34,7 @@
   <div class="card-footer">
     <div class="mb-3">
       <label for="publicKey" class="form-label">Public key</label>
-      <input type="text" class="form-control" id="publicKey" bind:value={publicKey}/>
+      <textarea class="form-control" id="publicKey" bind:value={publicKey}/>
     </div>
     <div class="mb-3">
       <label for="publicKey" class="form-label">Message</label>

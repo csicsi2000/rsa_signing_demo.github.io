@@ -25,6 +25,7 @@ export function generateRSAKeyPair(bits) {
 export function encodeMessage(message, privateKeyPem) {
     let privateKey = forge.pki.privateKeyFromPem(privateKeyPem)
     let md = forge.md.sha1.create();
+    console.log(message)
     md.update(message, 'utf8');
     var signature = privateKey.sign(md);
 
@@ -48,15 +49,8 @@ export function validateMessage(signature, publicKeyPem, originalMessage) {
   return verified
 }
 
-// Example usage:
-const keyPair = generateRSAKeyPair(2048)
-console.log('Public Key:', keyPair.publicKey)
-console.log('Private Key:', keyPair.privateKey)
 
-const originalMessage = 'Hello, RSA!'
-const signature = encodeMessage(originalMessage, keyPair.privateKey)
-console.log('Encoded Message:', signature)
-
-const isValid = validateMessage(signature, keyPair.publicKey, originalMessage)
-console.log('Message Validation:', isValid ? 'Valid' : 'Invalid')
-
+let message = "test"
+let pair = generateRSAKeyPair(512)
+let res = encodeMessage("test",pair.privateKey)
+let fin = validateMessage(res,pair.publicKey,message)
