@@ -11,7 +11,7 @@
 </script>
 <div class="card text-bg-info border border-secondary" style="width: 100%">
     <div class="card-header">
-        Document
+        Document with signature
     </div>
     <div class="card-body">
       {document.text}

@@ -11,13 +11,15 @@
   export let validationItems = []
 
   let isItemSelected = false
-  let validityStatus = ""
+  let validityStatus = "empty"
+
   $: {
     if(validationItems.length == 0){
-      isItemSelected = true
-    }else{
       isItemSelected = false
-      validityStatus = ""
+      validityStatus = "empty"
+    }else{
+      isItemSelected = true
+      console.log("Reset")
     }
   }
 
@@ -26,6 +28,7 @@
     let res = validateMessage(activeItem.signature,activeItem.publicKey,activeItem.text)
     if(res){
       validityStatus = "VALID"
+      console.log(validityStatus)
       validationItems[0].status = ValidationStatus.VALID
     }else{
       validityStatus = "INVALID"
@@ -42,10 +45,11 @@
   </div>
   <div class="card-footer">
     <div class="d-grid">
-      <button class="btn btn-success" on:click={() => validateFile()} disabled={isItemSelected}>
+      <button class="btn btn-success" on:click={() => validateFile()} disabled={!isItemSelected}>
         Validate message
       </button>
     </div>
     <ReceiveMessage bind:items={validationItems} />
+    <h2 class="text-center m-3">{validityStatus}</h2>
   </div>
 </div>

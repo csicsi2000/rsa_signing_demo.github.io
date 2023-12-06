@@ -10,16 +10,19 @@
 
   let publicKey = ""
   let message = ""
+  let signature = ""
 
   let enterSwitch = true
   $: {
     if (maliciousItem.length != 0 && enterSwitch) {
       publicKey = maliciousItem[0].publicKey
       message = maliciousItem[0].text
+      signature = maliciousItem[0].signature
       enterSwitch = false
     }else if(maliciousItem.length == 0){
       publicKey = ""
       message = ""
+      signature = ""
       enterSwitch = true
     }
   }
@@ -45,8 +48,12 @@
       <textarea class="form-control" id="publicKey" bind:value={publicKey}/>
     </div>
     <div class="mb-3">
-      <label for="publicKey" class="form-label">Message</label>
-      <input type="text" class="form-control" id="publicKey" bind:value={message}/>
+      <label for="signature" class="form-label">Signature</label>
+      <textarea class="form-control" id="signature" bind:value={signature}/>
+    </div>
+    <div class="mb-3">
+      <label for="message" class="form-label">Message</label>
+      <input type="text" class="form-control" id="message" bind:value={message}/>
     </div>
     <div class="d-grid">
       <button class="btn btn-danger" on:click={() => modify()}>
