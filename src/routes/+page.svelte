@@ -38,7 +38,7 @@
 
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase" id="mainNav">
   <div class="container">
-    <a class="navbar-brand text-white" href="#page-top">RSA signing demo</a>
+    <a class="navbar-brand text-white">RSA signing demo</a>
   </div>
 </nav>
 <!-- Button trigger modal -->
