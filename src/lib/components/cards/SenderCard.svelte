@@ -41,11 +41,11 @@
       publicKey,
       ValidationStatus.NOTVALIDATED
     );
-    console.log(newDocument);
     let tempItems = newItems;
     tempItems.push(newDocument);
     newItems = tempItems;
-    console.log(newItems);
+
+    message = ""
   }
 </script>
 

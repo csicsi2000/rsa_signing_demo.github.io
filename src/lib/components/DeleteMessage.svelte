@@ -26,9 +26,7 @@
 <h2>Delete</h2>
 
 <p>To delete a document drag the item to the below section.</p>
-<div
-  class="text-center d-flex container col mb-5"
->
+
   <section
     class="bg-danger bg-gradient dnd-area"
     use:dndzone={{ items, flipDurationMs }}
@@ -41,4 +39,4 @@
   </div>
   {/each}
 </section>
-</div>
+

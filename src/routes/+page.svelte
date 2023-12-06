@@ -61,6 +61,9 @@
                 <DndMessages bind:items={newItems} />
                 </div>
           </div>
+          <div class="row m-3">
+            <DeleteMessage />
+          </div>
     </div>
     <div class="col ">
       <MaliciousCard bind:maliciousItem />
@@ -68,9 +71,6 @@
     <div class="col ">
       <ReceiverCard bind:validationItems />
     </div>
-  </div>
-  <div class="row mt-5">
-    <DeleteMessage />
   </div>
 </div>
 
