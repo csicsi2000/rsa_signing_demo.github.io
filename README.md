@@ -1,5 +1,8 @@
 # RSA signing demo
 
-This is a project to showcase how signing works.
+Command for running the project:
 
-https://csicsi2000.github.io/rsa_signing_demo.github.io/
+```
+npm run dev -- --open
+```
+

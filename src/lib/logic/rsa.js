@@ -1,4 +1,4 @@
-import forge from 'node-forge'
+import forge from "node-forge";
 import { KeyPair } from "$lib/object/keyPair";
 
 var rsa = forge.pki.rsa;
@@ -9,11 +9,11 @@ var rsa = forge.pki.rsa;
  * @returns {KeyPair} - An object containing publicKey and privateKey.
  */
 export function generateRSAKeyPair(bits) {
-  const keyPair = rsa.generateKeyPair({ bits })
-  const publicKey = forge.pki.publicKeyToPem(keyPair.publicKey)
-  const privateKey = forge.pki.privateKeyToPem(keyPair.privateKey)
+  const keyPair = rsa.generateKeyPair({ bits });
+  const publicKey = forge.pki.publicKeyToPem(keyPair.publicKey);
+  const privateKey = forge.pki.privateKeyToPem(keyPair.privateKey);
 
-  return new KeyPair(publicKey,privateKey)
+  return new KeyPair(publicKey, privateKey);
 }
 
 /**
@@ -23,13 +23,13 @@ export function generateRSAKeyPair(bits) {
  * @returns {string} - The encoded message.
  */
 export function encodeMessage(message, privateKeyPem) {
-    let privateKey = forge.pki.privateKeyFromPem(privateKeyPem)
-    let md = forge.md.sha1.create();
-    console.log(message)
-    md.update(message, 'utf8');
-    var signature = privateKey.sign(md);
+  let privateKey = forge.pki.privateKeyFromPem(privateKeyPem);
+  let md = forge.md.sha1.create();
+  console.log(message);
+  md.update(message, "utf8");
+  var signature = privateKey.sign(md);
 
-    return signature;
+  return signature;
 }
 
 /**
@@ -40,11 +40,15 @@ export function encodeMessage(message, privateKeyPem) {
  * @returns {boolean} - True if the message is valid, false otherwise.
  */
 export function validateMessage(signature, publicKeyPem, originalMessage) {
-  let md = forge.md.sha1.create();
-  md.update(originalMessage, 'utf8');
-  const publicKey = forge.pki.publicKeyFromPem(publicKeyPem)
-  var verified = publicKey.verify(md.digest().bytes(), signature);
-  console.log("Verification status: " + verified)
+  try {
+    let md = forge.md.sha1.create();
+    md.update(originalMessage, "utf8");
+    const publicKey = forge.pki.publicKeyFromPem(publicKeyPem);
+    var verified = publicKey.verify(md.digest().bytes(), signature);
+    console.log("Verification status: " + verified);
 
-  return verified
+    return verified;
+  } catch {
+    return false;
+  }
 }

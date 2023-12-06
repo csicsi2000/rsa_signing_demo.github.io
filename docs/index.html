@@ -5,13 +5,13 @@
 		<link rel="icon" href="./favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
-		<link rel="modulepreload" href="./_app/immutable/entry/start.7c0b68b9.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.cce52133.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.a9cd3aa6.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.4fbb4bf7.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.aebbb0be.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.56df43b8.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.42b54e8b.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index.8e26022c.js">
 		<link rel="modulepreload" href="./_app/immutable/nodes/0.b64afd84.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/2.0e822318.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.6316f522.js">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 		<style>
 			.dnd-area{
@@ -24,12 +24,12 @@
 		</style>
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase" id="mainNav" data-svelte-h="svelte-1g6xkk"><div class="container"><a class="navbar-brand text-white">RSA signing demo</a></div></nav>  <div class="d-grid m-3" data-svelte-h="svelte-1sjjgol"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newItemModal">Launch Document Creation</button></div> <div class="container "><div class="row"><div class="col"><div class="card"><div class="card-header" data-svelte-h="svelte-lvk3f1">Active messages</div> <div class="card-body" data-svelte-h="svelte-1gskqo1">Generated messages</div> <div class="card-footer"><section class="dnd-area d-grid gap-3 p-2"></section></div></div></div> <div class="col "><div class="card text-dark border-secondary" style="background-color: #faee91;"><h5 class="card-header" data-svelte-h="svelte-m5hl3e">Malicious 3rd party</h5> <div class="card-body" data-svelte-h="svelte-jmo20k"><h5 class="card-title">Manipulate content</h5> <p class="card-text">3rd party can manipulate the signed file for fake documents.
+		<div style="display: contents">  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase" id="mainNav" data-svelte-h="svelte-6qe9i0"><div class="container"><p class="navbar-brand text-white">RSA signing demo</p></div></nav>  <div class="d-grid m-3" data-svelte-h="svelte-1sjjgol"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newItemModal">Launch Document Creation</button></div> <div class="container "><div class="row"><div class="col"><div class="card"><div class="card-header" data-svelte-h="svelte-lvk3f1">Active messages</div> <div class="card-body" data-svelte-h="svelte-1gskqo1">Generated messages</div> <div class="card-footer"><section class="dnd-area d-grid gap-3 p-2"></section></div></div></div> <div class="col "><div class="card text-dark border-secondary" style="background-color: #faee91;"><h5 class="card-header" data-svelte-h="svelte-m5hl3e">Malicious 3rd party</h5> <div class="card-body" data-svelte-h="svelte-jmo20k"><h5 class="card-title">Manipulate content</h5> <p class="card-text">3rd party can manipulate the signed file for fake documents.
       <br>Select a document to manipulate</p></div> <div class="card-footer"><div class="mb-3"><label for="publicKey" class="form-label" data-svelte-h="svelte-75lc5g">Public key</label> <textarea class="form-control" id="publicKey"></textarea></div> <div class="mb-3"><label for="signature" class="form-label" data-svelte-h="svelte-1abij4i">Signature</label> <textarea class="form-control" id="signature"></textarea></div> <div class="mb-3"><label for="message" class="form-label" data-svelte-h="svelte-ch8gny">Message</label> <input type="text" class="form-control" id="message" value=""></div> <div class="d-grid"><button class="btn btn-danger" data-svelte-h="svelte-1c3fc92">Modify file</button></div> <p data-svelte-h="svelte-1xwac7w">Drag a document into the are below</p> <section class="dnd-area d-grid gap-3 p-2"></section></div></div></div> <div class="col "><div class="card border-secondary"><h5 class="card-header" data-svelte-h="svelte-lfphwq">Receiver</h5> <div class="card-body" style="min-height: 19rem;" data-svelte-h="svelte-eyllx0"><h5 class="card-title">The receiver of the document</h5> <p class="card-text">The receiver can validate the message based on the received public key. If the document has been manipulated, the message will be invalid.</p></div> <div class="card-footer"><div class="d-grid"><button class="btn btn-success" disabled>Validate message</button></div> <p data-svelte-h="svelte-1xwac7w">Drag a document into the are below</p> <section class="dnd-area d-grid gap-3 p-2"></section> <h2 class="text-center m-3">empty</h2></div></div></div></div> <div class="row mt-5"><h2 data-svelte-h="svelte-dchnil">Delete</h2> <p data-svelte-h="svelte-p5crs6">To delete a document drag the item to the below section.</p> <div class="text-center d-flex container col mb-5"><section class="bg-danger bg-gradient dnd-area"></section></div></div></div>  <div class="modal fade" id="newItemModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable " style="max-width: 1000px;"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="exampleModalLabel" data-svelte-h="svelte-w1ttzx">Create new item</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div> <div class="modal-body"><div class="card border-secondary"><h5 class="card-header" data-svelte-h="svelte-w8oce">Sender</h5> <div class="card-body"><div class="row"><div class="col"><div class="mb-3"><label for="privateKey" class="form-label" data-svelte-h="svelte-1mrfza8">Bits count for generation</label> <input type="number" class="form-control" id="privateKey" min="512" value="512"></div> <div class="mb-3"><label for="privateKey" class="form-label" data-svelte-h="svelte-14n431g">Private key</label> <textarea class="form-control" id="privateKey" disabled></textarea></div> <div class="mb-3"><label for="publicKey" class="form-label" data-svelte-h="svelte-75lc5g">Public key</label> <textarea class="form-control" id="publicKey" disabled></textarea></div> <div class="d-grid"><button class="btn btn-success" data-svelte-h="svelte-1cx8gqf">Generate key</button></div></div> <div class="col"><div class="mb-3"><label for="message" class="form-label" data-svelte-h="svelte-ch8gny">Message</label> <textarea class="form-control" id="message" rows="3"></textarea> <div class="form-text" data-svelte-h="svelte-1l4w8ea">Message that will be signed</div></div> <div class="d-grid"><button class="btn btn-primary" disabled>Sign</button></div> <p data-svelte-h="svelte-1qf0tei">The newly created document will be shown below</p> <section class="dnd-area d-grid gap-3 p-2"></section></div></div></div></div></div> <div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-svelte-h="svelte-66vi1">Close</button></div></div></div></div> 
 			
 			<script>
 				{
-					__sveltekit_26ydde = {
+					__sveltekit_1wm1ypm = {
 						assets: "/your-repo-name",
 						base: new URL(".", location).pathname.slice(0, -1),
 						env: {}
@@ -40,8 +40,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.7c0b68b9.js"),
-						import("./_app/immutable/entry/app.aebbb0be.js")
+						import("./_app/immutable/entry/start.cce52133.js"),
+						import("./_app/immutable/entry/app.42b54e8b.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 2],
